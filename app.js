@@ -1,9 +1,8 @@
 const express = require('express')
+const path = require('path')
 const app = express()
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.listen(3002, () => {
     console.log('Server runs on port 3002!')
